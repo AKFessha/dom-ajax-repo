@@ -35,11 +35,3 @@ searchBtn.addEventListener("click", function() {
   }
   fetchUser(userName);
 });
-
-/* fetch("https://jobs.github.com/positions.json", { mode: "no-cors" })
-  .then(function(response) {
-    return response.json();
-  })
-  .then(function(message) {
-    console.log(message);
-  }); */

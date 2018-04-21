@@ -20,12 +20,8 @@ fetch("https://api.github.com/repos/codeyourfuture/js-exercises/pulls")
     var resultsArray = [];
     pullRequests.forEach(function listingPullRequest(pullRequest) {
       //  if (pullRequest.user.id === 31638686) {
-      /*
-     
-      */
-      resultsArray.push(pullRequest);
-
       //  }
+      resultsArray.push(pullRequest);
     });
     outputList(resultsArray);
     var mySearch = document.querySelector("#mySearch");
@@ -34,9 +30,9 @@ fetch("https://api.github.com/repos/codeyourfuture/js-exercises/pulls")
       const value = event.target.value;
       pullRequestList.innerHTML = "";
       pullRequests.forEach(function(pullRequest) {
-        console.log(pullRequest.user.login);
-        console.log(value);
-        console.log(pullRequest.user.login.search(value));
+        // console.log(pullRequest.user.login);
+        // console.log(value);
+        //  console.log(pullRequest.user.login.search(value));
 
         if (
           pullRequest.user.login.toLowerCase().search(value.toLowerCase()) !==
