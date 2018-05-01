@@ -33,10 +33,10 @@ fetch("https://api.github.com/repos/codeyourfuture/js-exercises/pulls")
         // console.log(pullRequest.user.login);
         // console.log(value);
         //  console.log(pullRequest.user.login.search(value));
-
         if (
-          pullRequest.user.login.toLowerCase().search(value.toLowerCase()) !==
-          -1
+          // pullRequest.user.login.toLowerCase().includes(value.toLowerCase())
+          // pullRequest.user.login.toLowerCase().search(value.toLowerCase()) !== -1
+          pullRequest.user.login.toLowerCase().startsWith(value.toLowerCase())
         ) {
           var a = document.createElement("a");
           a.setAttribute("href", pullRequest.html_url);
