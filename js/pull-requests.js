@@ -1,7 +1,7 @@
 var pullRequestList = document.querySelector("#pull-requests-list");
 function outputList(resultsArray) {
-  console.log(resultsArray);
-  resultsArray.forEach(function(pullRequest) {
+  //console.log(resultsArray);
+  resultsArray.forEach(pullRequest => {
     var a = document.createElement("a");
     a.setAttribute("href", pullRequest.html_url);
     var linkText = document.createTextNode(pullRequest.title);
@@ -13,10 +13,8 @@ function outputList(resultsArray) {
   });
 }
 fetch("https://api.github.com/repos/codeyourfuture/js-exercises/pulls")
-  .then(function(response) {
-    return response.json();
-  })
-  .then(function(pullRequests) {
+  .then(response => response.json())
+  .then(pullRequests => {
     var resultsArray = [];
     pullRequests.forEach(function listingPullRequest(pullRequest) {
       //  if (pullRequest.user.id === 31638686) {
@@ -29,7 +27,7 @@ fetch("https://api.github.com/repos/codeyourfuture/js-exercises/pulls")
     mySearch.addEventListener("keyup", function(event) {
       const value = event.target.value;
       pullRequestList.innerHTML = "";
-      pullRequests.forEach(function(pullRequest) {
+      pullRequests.forEach(pullRequest => {
         // console.log(pullRequest.user.login);
         // console.log(value);
         //  console.log(pullRequest.user.login.search(value));
