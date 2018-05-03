@@ -8,11 +8,9 @@ function fetchUser(userName) {
 
   var reposCount = document.querySelector("#repos-count");
   fetch(url)
-    .then(function(response) {
-      return response.json();
-    })
-    .then(function(repos) {
-      repos.forEach(function(repo) {
+    .then(response => response.json())
+    .then(repos => {
+      repos.forEach(repo => {
         var a = document.createElement("a");
         a.setAttribute("href", repo.html_url);
         a.innerHTML = repo.name;
